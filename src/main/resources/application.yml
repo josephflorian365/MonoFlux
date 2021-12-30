@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: bpyjue2ma2dkm4c
+      host: bpyjue2ma2dkm4c-mongodb.services.clever-cloud.com
+      port: 27017
+      username: u6ebfaj4hyh3vg5vbizl
+      password: DB0nccnwIKoNsUXbhCRR
