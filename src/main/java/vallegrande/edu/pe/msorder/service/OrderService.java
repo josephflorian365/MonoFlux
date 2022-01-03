@@ -2,9 +2,11 @@ package vallegrande.edu.pe.msorder.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import vallegrande.edu.pe.msorder.dto.OrderDto;
+import vallegrande.edu.pe.msorder.entity.Order;
 import vallegrande.edu.pe.msorder.repository.OrderRepository;
 import vallegrande.edu.pe.msorder.utils.AppUtils;
 
@@ -16,7 +18,7 @@ import java.util.List;
 public class OrderService {
 
     @Autowired
-    private OrderRepository repository;
+    OrderRepository repository;
 
     List<OrderDto> listOrderDto = new ArrayList<OrderDto>();
 
@@ -46,10 +48,7 @@ public class OrderService {
         return repository.deleteById(orderId);
     }
 
-/*    public List<OrderDto> saveOrders(List<OrderDto> orderDtos) {
-        orderDtos.stream().forEach(orderDto -> {
-            listOrderDto.add(orderDto);
-        });
-        return listOrderDto;
-    }*/
+    public Flux<Order> saveOrders(Flux<Order> orderFlux) {
+        return repository.saveAll(orderFlux);
+    }
 }

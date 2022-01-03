@@ -21,6 +21,6 @@ public class OrderDto {
     private String orderStatus;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date orderDate;
+    //private Date orderDate;
     private String orderProduct;
 }
